@@ -1,0 +1,103 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+.onepage-pagination li a:before{
+	background:white;
+}
+
+.onepage-pagination li a.active:before{
+	border: 1px solid white;
+}
+
+#sectionOne {
+	background: linear-gradient(to bottom, rgba(150,24,24,1) 0%,rgba(207,37,33,1) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.info-container-flex{
+	height:35%;
+	display:flex;
+}
+.disney{
+	width:45%;
+	height:100%;
+}
+.speech-bubble {
+	width:65%;
+	height:100%;
+
+}
+
+
+
+.speech-bubble img{
+	padding:3em 1em 2em 1em;
+
+
+}
+
+.baymax-container-flex {
+	display:flex;
+	align-items:flex-end;
+	justify-content:space-around;
+	height:65%;
+}
+
+.baymax-scale {
+	height:100%;
+}
+
+img{
+	max-width:100%;
+
+}
+
+@-webkit-keyframes blink {
+	0% , 49%   { transform:scaleY(1); }
+	50%   { transform:scaleY(.01); }
+	51%, 100% { transform:scaleY(1); }
+}
+
+@-webkit-keyframes headSquish {
+	0% , 49%   { transform:scaleY(1); }
+	50%   { transform:scaleY(.95); }
+	51%, 100% { transform:scaleY(1); }
+}
+
+@-webkit-keyframes rot {
+	0% {
+		transform: rotate(0deg)
+		translate(-10px)
+		rotate(0deg);
+	}
+	15%, 100% {
+		transform: rotate(360deg)
+		translate(-10px) 
+		rotate(-360deg);
+	}
+}
+
+#eyes {
+	-webkit-animation: blink 8s infinite;
+	transform-origin:center;
+
+}
+
+#armmove {
+	-webkit-animation: rot 4s infinite linear;
+}
+
+#sectionTwo {
+	background-image: url(images/sanfran.jpg);
+	background-size:cover;
+}
+
+#sectionThree {
+	background-image: url(images/hiro.jpg);
+	background-size:cover;
+}
+
+.story-box {
+	margin:auto 0;
+}

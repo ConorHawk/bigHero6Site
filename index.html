@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Big Hero 6</title>
+	<!-- Latest compiled and minified CSS -->
+
+	<!--  v   Bootstrap CDN  v   -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!--  v   Jquery script  v   -->
+	<script src="js/jquery.min.js"></script>
+
+	<!--  v   One page scroll script  v   -->
+	<script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>
+
+	<!--  v   One page scroll style sheet  v   -->
+	<link href='css/onepage-scroll.css' rel='stylesheet' type='text/css'>
+
+	<!--  v   My Style sheet  v   -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!--  v   Responsive Metatag v   -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+<body>
+
+	<div class="main">
+
+<!-- *****************   Home  ****************************** -->
+
+		<section id="sectionOne">
+			<div class="info-container-flex">
+				<div class="disney"></div>
+				<div class="speech-bubble">
+					<img src="images/bubble.png" alt="">
+				</div>
+			</div>
+			<div class="baymax-container-flex">
+			<div class="baymax-scale">
+				<img src="images/baymaxmob	.png" alt="">	
+				</div>
+			</div>
+
+	</section>
+
+<!-- *****************   Story  ****************************** -->
+
+	<section id="sectionTwo">
+
+		<div class="story-box">
+
+			<h2>Story</h2>
+			<p>When a criminal plot threatens the hi-tech metropolis of San Fransokyo, brilliant young robotics whiz Hiro Hamada (voice of Ryan Potter) leaps into action with his tech-savvy friends, and his robot companion Baymax (voice of Scott Adsit) in Disney Animation's adaptation of the popular Marvel Comics series.</p>
+
+		</div>
+
+	</section>
+
+<!-- *****************   Characters  ****************************** -->
+
+	<section id="sectionThree"><h1>Characters</h1></section>
+
+</div>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script>
+
+
+	$(".main").onepage_scroll({
+    	   sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
+    	   easing: "ease-in-out",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
+    	                                    // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
+    	   animationTime: 1000,             // AnimationTime let you define how long each section takes to animate
+    	   pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
+    	   updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
+    	   beforeMove: function(index) {},  // This option accepts a callback function. The function will be called before the page moves.
+    	   afterMove: function(index) {},   // This option accepts a callback function. The function will be called after the page moves.
+    	   loop: true,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
+    	   keyboard: true,                  // You can activate the keyboard controls
+    	   responsiveFallback: false,        // You can fallback to normal page scroll by defining the width of the browser in which
+    	                                    // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
+    	                                    // the browser's width is less than 600, the fallback will kick in.
+    	   direction: "horizontal"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".  
+    	});
+</script>
+</body>
+</html>
