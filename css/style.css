@@ -92,7 +92,7 @@ img{
 }
 
 #sectionTwo {
-	background-image: url(images/sanfran.jpg);
+	background-image: url("../images/sanfran-mob.jpg");
 	background-size:cover;
 }
 
@@ -102,5 +102,57 @@ img{
 }
 
 .story-box {
-	margin:auto 0;
+	height:100%;
+
+}
+
+.gif-background {
+	display:block;
+	height:auto;
+}
+
+.story-box-text {
+
+	padding:.5em;
+	background: rgba(0,0,0,.5);
+	color:white;
+
+}
+
+.story-box-text h2{
+	text-align:center;
+	color:white;
+	font-weight:bold;
+}
+
+.story-box-text p{
+	text-align:justify;
+}
+
+.char-select-flex{
+	height:20%;
+	background:black;
+	display:flex;
+	flex-wrap:wrap;
+}
+
+.char{
+	width:33.333%;
+	height:50%;
+	flex-shrink:0;
+	background-size:cover;
+}
+
+#hiro {
+	background-image:url("../images/hiro-thumb.jpg");
+}
+
+.char-info-flex {
+	height:80%;
+	display:flex;
+	align-items:flex-end;
+}
+
+.char-info{
+	padding:2em;
 }

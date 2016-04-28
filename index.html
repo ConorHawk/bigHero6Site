@@ -32,7 +32,7 @@
 
 	<div class="main">
 
-<!-- *****************   Home  ****************************** -->
+		<!-- *****************   Home  ****************************** -->
 
 		<section id="sectionOne">
 			<div class="info-container-flex">
@@ -42,39 +42,63 @@
 				</div>
 			</div>
 			<div class="baymax-container-flex">
-			<div class="baymax-scale">
-				<img src="images/baymax-mobile.png" alt="">	
+				<div class="baymax-scale">
+					<img src="images/baymax-mobile.png" alt="">	
 				</div>
 			</div>
 
-	</section>
+		</section>
 
-<!-- *****************   Story  ****************************** -->
+		<!-- *****************   Story  ****************************** -->
 
-	<section id="sectionTwo">
+		<section id="sectionTwo">
 
-		<div class="story-box">
+			<div class="story-box">
 
-			<h2>Story</h2>
-			<p>When a criminal plot threatens the hi-tech metropolis of San Fransokyo, brilliant young robotics whiz Hiro Hamada (voice of Ryan Potter) leaps into action with his tech-savvy friends, and his robot companion Baymax (voice of Scott Adsit) in Disney Animation's adaptation of the popular Marvel Comics series.</p>
+				<div class="gif-background"></div>
 
-		</div>
+				<div class="story-box-text">
 
-	</section>
+					<h2>Story</h2>
+					<p>When a criminal plot threatens the hi-tech metropolis of San Fransokyo, brilliant young robotics whiz Hiro Hamada (voice of Ryan Potter) leaps into action with his tech-savvy friends, and his robot companion Baymax (voice of Scott Adsit) in Disney Animation's adaptation of the popular Marvel Comics series.</p>
 
-<!-- *****************   Characters  ****************************** -->
+				</div>
 
-	<section id="sectionThree"><h1>Characters</h1></section>
+			</div>
 
-</div>
+		</section>
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<!-- *****************   Characters  ****************************** -->
 
-<script>
+		<section id="sectionThree">
+			
+			<div class="char-select-flex">
+				<div class="char" id="hiro"></div>
+				<div class="char" id="baymax"></div>
+				<div class="char" id="gogo"></div>
+				<div class="char" id="honey"></div>
+				<div class="char" id="wasabi"></div>
+				<div class="char" id="fred"></div>
+			</div>
+
+			<div class="char-info-flex">
+			<div class="char-info">
+			<h3>Hiro</h3>
+			<p>Hiro Hamada has the mind of a genius and the heart of a 14-year-old: his amazing battle-bots dominate the underground bot fights. But when a tragic event changes everything, Hiro turns to a robot named Baymax, and they form an unbreakable bond becoming part of a band of high-tech heroes on a very important mission.</p>
+			</div>
+			</div>
+
+		</section>
+
+	</div>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	<script>
 
 
-	$(".main").onepage_scroll({
+		$(".main").onepage_scroll({
     	   sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
     	   easing: "ease-in-out",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
     	                                    // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
