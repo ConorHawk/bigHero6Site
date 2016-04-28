@@ -26,15 +26,18 @@
 .speech-bubble {
 	width:65%;
 	height:100%;
-
 }
 
+#bubble-pic {
+	cursor:pointer;
+}
 
+#bubble-pic:active {
+	transform: translateY(2px);
+}
 
 .speech-bubble img{
 	padding:3em 1em 2em 1em;
-
-
 }
 
 .baymax-container-flex {
