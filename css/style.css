@@ -191,9 +191,11 @@ img{
 	align-items:flex-end;
 	background-image:url(../images/hiro-mob-bg.jpg);
 	background-size:cover;
+	transition: background-image 0.3s;
 }
 
 .char-info-container{
+
 	padding:0em 1em;
 	background: rgba(0,0,0,.5);
 	color:white;
@@ -204,5 +206,6 @@ img{
 }
 
 .info-active {
-	display:block !important;
+
+
 }
