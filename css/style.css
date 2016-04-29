@@ -130,10 +130,17 @@ img{
 }
 
 .char-select-flex{
-	height:20%;
+	height:15%;
 	background:black;
 	display:flex;
 	flex-wrap:wrap;
+	border-bottom: 2px solid black;
+}
+
+.char-select-flex div{
+		-webkit-filter: brightness(40%); /* Chrome, Safari, Opera */
+	    filter: brightness(40%);
+	    transition: .2s all ease-in-out;
 }
 
 .char{
@@ -147,12 +154,55 @@ img{
 	background-image:url("../images/hiro-thumb.jpg");
 }
 
-.char-info-flex {
-	height:80%;
-	display:flex;
-	align-items:flex-end;
+#baymax {
+	background-image:url("../images/baymax-thumb.jpg");
 }
 
-.char-info{
-	padding:2em;
+#gogo {
+	background-image:url("../images/gogo-thumb.jpg");
+}
+
+#honey {
+	background-image:url("../images/honey-thumb.jpg");
+}
+
+#wasabi {
+	background-image:url("../images/wasabi-thumb.jpg");
+}
+
+#fred {
+	background-image:url("../images/fred-thumb.jpg");
+}
+
+
+@-webkit-keyframes glow {
+    from {-webkit-filter: brightness(100%);}
+    to {-webkit-filter: brightness(130%);}
+} 
+
+.char-active {
+	-webkit-animation: glow 1.3s infinite;
+	-webkit-animation-direction: alternate; 
+}
+
+.char-info-flex {
+	height:85%;
+	display:flex;
+	align-items:flex-end;
+	background-image:url(../images/hiro-mob-bg.jpg);
+	background-size:cover;
+}
+
+.char-info-container{
+	padding:0em 1em;
+	background: rgba(0,0,0,.5);
+	color:white;
+}
+
+.char-info-container div {
+	display:none;
+}
+
+.info-active {
+	display:block !important;
 }
