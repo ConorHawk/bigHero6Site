@@ -31,6 +31,8 @@ $( document ).ready(function(){
 		//if there is an active class on the character information div
 		if ($(".char-info").siblings(".info-active").length) {
 
+			//changes the background image to match the clicked character.
+			//relies on correct file naming
 			$(".char-info-flex").css("background-image","url(images/"+clickedId+"-mob-bg.jpg");
 
 			//slides the current active div away

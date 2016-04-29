@@ -11,6 +11,8 @@
 	border: 1px solid white;
 }
 
+/********************   Home Screen   ******************/
+
 #sectionOne {
 	background: linear-gradient(to bottom, rgba(150,24,24,1) 0%,rgba(207,37,33,1) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
@@ -91,15 +93,15 @@ img{
 	-webkit-animation: rot 4s infinite linear;
 }
 
+
+
+/********************   Story Screen   ******************/
+
 #sectionTwo {
 	background-image: url("../images/sanfran-mob.jpg");
 	background-size:cover;
 }
 
-#sectionThree {
-	background-image: url(images/hiro.jpg);
-	background-size:cover;
-}
 
 .story-box {
 	height:100%;
@@ -129,6 +131,8 @@ img{
 	text-align:justify;
 }
 
+/********************   Character screen   ******************/
+
 .char-select-flex{
 	height:15%;
 	background:black;
@@ -140,6 +144,8 @@ img{
 .char-select-flex div{
 		-webkit-filter: brightness(40%); /* Chrome, Safari, Opera */
 	    filter: brightness(40%);
+	    -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+	    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 	    transition: .2s all ease-in-out;
 }
 
@@ -197,15 +203,10 @@ img{
 .char-info-container{
 
 	padding:0em 1em;
-	background: rgba(0,0,0,.5);
+	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.02) 1%,rgba(0,0,0,0.65) 30%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	color:white;
 }
 
 .char-info-container div {
 	display:none;
-}
-
-.info-active {
-
-
 }
