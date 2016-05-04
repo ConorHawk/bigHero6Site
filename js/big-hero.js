@@ -21,14 +21,12 @@ $( document ).ready(function(){
 
 			//changes the bgSize variable to desk-bg
 			bgSize = "-desk-bg.jpg";
-			alert("big");
 
 		//if the screen size is smaller than 767 px
 		} else {
 
 			//changes the bgSize to mob-bg
 			bgSize = "-mob-bg.jpg";
-			alert("small");
 		}
 	}
 
