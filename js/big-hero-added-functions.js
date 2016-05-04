@@ -6,8 +6,9 @@ $( document ).ready(function(){
 	//When the window is resize, run the checkSize function.
 	$( window ).resize(function(){
 		checkSize();
-		changeBackgroundImage();
 	});
+
+
 
 	//creates a variable that will control the resolution of the background images
 	var bgSize = "desk-bg";
@@ -21,14 +22,12 @@ $( document ).ready(function(){
 
 			//changes the bgSize variable to desk-bg
 			bgSize = "-desk-bg.jpg";
-			alert("big");
 
 		//if the screen size is smaller than 767 px
 		} else {
 
 			//changes the bgSize to mob-bg
 			bgSize = "-mob-bg.jpg";
-			alert("small");
 		}
 	}
 
@@ -52,17 +51,14 @@ $( document ).ready(function(){
 		}
 	}
 
-	function changeBackgroundImage(){
-	//changes the background image to match the clicked character.
-			//relies on correct file naming
-			$(".char-info-flex").css("background-image","url(images/"+clickedId+bgSize);
-
-	}
-
 	function changeDisplayedInfo(){
 
 		//if there is an active class on the character information div
 		if ($(".char-info").siblings(".info-active").length) {
+
+			//changes the background image to match the clicked character.
+			//relies on correct file naming
+			$(".char-info-flex").css("background-image","url(images/"+clickedId+bgSize);
 
 			//slides the current active div away
 			$(".info-active").slideToggle("fast",function(){
@@ -103,8 +99,6 @@ $( document ).ready(function(){
 
 		//Changes the info when the character thumbnails are clicked
 		changeDisplayedInfo();
-
-		changeBackgroundImage();
 
 	});
 });

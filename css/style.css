@@ -58,9 +58,6 @@
 }
 
 .baymax-container-flex {
-	display:flex;
-	align-items:flex-end;
-	justify-content:space-around;
 	height:65%;
 }
 
@@ -68,9 +65,10 @@
 	height:100%;
 }
 
-img{
-	max-width:100%;
-
+svg {
+	height:100%;
+	display:block;
+	margin:0 auto;
 }
 
 @-webkit-keyframes blink {
@@ -88,12 +86,12 @@ img{
 @-webkit-keyframes rot {
 	0% {
 		transform: rotate(0deg)
-		translate(-10px)
+		translate(10px)
 		rotate(0deg);
 	}
 	15%, 100% {
 		transform: rotate(360deg)
-		translate(-10px) 
+		translate(10px) 
 		rotate(-360deg);
 	}
 }
@@ -109,9 +107,16 @@ img{
 
 }
 
-#armmove {
-	-webkit-animation: rot 4s infinite linear;
+.armMoveAnimation {
+	-webkit-animation: rot 6s infinite ease-in-out;
+
 }
+
+/*svg {
+-webkit-filter: drop-shadow(8px 8px 10px black);  Chrome, Safari, Opera 
+    filter: drop-shadow(8px 8px 10px black);
+}
+*/
 
 
 
@@ -160,9 +165,8 @@ img{
 }
 
 .story-box-text p{
-	text-align:justify;
 	margin:0;
-	padding:.8em;
+	padding:1em;
 }
 
 .story-box-text p a {
@@ -173,6 +177,7 @@ img{
 	border: 1px solid black;
 	margin:1em 0em;
 	float:right;
+	border-radius:0;
 
 }
 
@@ -199,6 +204,7 @@ img{
 	height:50%;
 	flex-shrink:0;
 	background-size:cover;
+	background-position:center;
 }
 
 #hiro {
@@ -242,6 +248,7 @@ img{
 	align-items:flex-end;
 	background-image:url(../images/hiro-mob-bg.jpg);
 	background-size:cover;
+	background-position:center;
 	transition: background-image 0.3s;
 }
 
@@ -266,7 +273,7 @@ img{
 
 .char-info-container p{
 
-	color:#951704;
+	color:rgba(27,29,30,1);
 	padding:1em;
 	border: 1px solid black;
 	
@@ -299,5 +306,29 @@ img{
 	.char-info-container{
 		width:50%;
 		margin:0 auto;
+	}
+
+	#hiro {
+		background-image:url("../images/hiro-desk-thumb.jpg");
+	}
+
+	#baymax {
+		background-image:url("../images/baymax-desk-thumb.jpg");
+	}
+
+	#gogo {
+		background-image:url("../images/gogo-desk-thumb.jpg");
+	}
+
+	#honey {
+		background-image:url("../images/honey-desk-thumb.jpg");
+	}
+
+	#wasabi {
+		background-image:url("../images/wasabi-desk-thumb.jpg");
+	}
+
+	#fred {
+		background-image:url("../images/fred-desk-thumb.jpg");
 	}
 }
