@@ -3,6 +3,11 @@ $( document ).ready(function(){
 	//sets the default character info to be shown
 	$(".info-active").slideToggle();
 
+	//sets the clickedId to Hiro so that if the user resizes the char select
+	//before a character is clicked, there is the default stored in the clickedID
+	//variable
+	clickedId = "hiro";
+
 	//When the window is resize, run the checkSize function.
 	$( window ).resize(function(){
 		checkSize();
@@ -27,7 +32,7 @@ $( document ).ready(function(){
 
 			//changes the bgSize to mob-bg
 			bgSize = "-mob-bg.jpg";
-		}
+		}	
 	}
 
 	//creates a function that sets the active class on the active char thumbnail div
@@ -104,5 +109,13 @@ $( document ).ready(function(){
 
 		changeBackgroundImage();
 
+	});
+
+	$(".minimize").click(function(){
+		$( ".story-paragraph" ).fadeToggle(200);
+		$( ".arrow-down" ).fadeToggle(200);
+		$( ".story-box-text-title" ).toggleClass("story-box-text-title-background shove-left");
+		$( ".story-box" ).toggleClass("shove-left");
+	
 	});
 });

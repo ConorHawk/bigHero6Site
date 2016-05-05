@@ -30,6 +30,7 @@
 	background: linear-gradient(to bottom, rgba(105,9,0,1) 0%,rgba(161,27,6,1) 37%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
+
 .info-container-flex{
 	height:35%;
 	display:flex;
@@ -69,6 +70,7 @@ svg {
 	height:100%;
 	display:block;
 	margin:0 auto;
+	padding: 0em 1em;
 }
 
 @-webkit-keyframes blink {
@@ -123,18 +125,26 @@ svg {
 /********************   Story Screen   ******************/
 
 #sectionTwo {
-	background-image: url("../images/sanfran-mob.jpg");
-	background-size:cover;
+
 /*	-webkit-box-shadow: inset 0px 0px 0px 5px rgba(156,25,8,1);
 	-moz-box-shadow: inset 0px 0px 0px 5px rgba(156,25,8,1);
 	box-shadow: inset 0px 0px 0px 5px rgba(156,25,8,1);*/
 }
 
+video{ 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    object-fit: cover;
+
+}
+
 
 .story-box {
 
-
-
+	position:fixed;
+	transition: all 0.5s ease;
 }
 
 .gif-background {
@@ -143,30 +153,59 @@ svg {
 }
 
 .story-box-text {
-	margin:2em;
-	padding-bottom:2em;
-	-webkit-box-shadow: 0px 0px 41px -6px rgba(0,0,0,0.73);
-	-moz-box-shadow: 0px 0px 41px -6px rgba(0,0,0,0.73);
-	box-shadow: 0px 0px 41px -6px rgba(0,0,0,0.73);
-	background:white;
-	border: 1px solid black;
+	margin:2em 2em 0em 2em;
+
+
+
 
 
 }
 
-.story-box-text h2{
+.arrow-down {
+	width: 0; 
+	height: 0; 
+	border-left: 0px solid transparent;
+	border-right: 30px solid transparent;
+	border-top: 30px solid #fff;
+	margin-left:15%;
+}
+
+.story-box-text-title{
+	border-radius: 21px 21px 0px 0px;
 	text-align:center;
 	color:white;
 	font-family: 'Play', sans-serif;
 	font-weight:bold;
 	margin:0;
 	padding:.3em;
+	transition: all 0.2s ease;
+	
+}
+
+.story-box-text-title-background {
 	background: linear-gradient(to bottom, rgba(55,59,63,1) 0%,rgba(27,29,30,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.shove-left {
+	transform: translateX(-10px);
+}
+
+.minimize {
+	float:right;
+	margin-right:1em;
+	color:white;
+}
+
+.minimize:before{
+	color:white;
 }
 
 .story-box-text p{
 	margin:0;
 	padding:1em;
+		background:white;
+			border-radius: 0px 0px 30px 30px;
+
 }
 
 .story-box-text p a {
@@ -191,13 +230,6 @@ svg {
 	border-bottom: 2px solid black;
 }
 
-.char-select-flex div{
-		-webkit-filter: brightness(40%); /* Chrome, Safari, Opera */
-	    filter: brightness(40%);
-/*	    -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-	    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);*/
-	    transition: .2s all ease-in-out;
-}
 
 .char{
 	width:33.333%;
@@ -205,36 +237,55 @@ svg {
 	flex-shrink:0;
 	background-size:cover;
 	background-position:center;
+	-webkit-filter: brightness(40%); /* Chrome, Safari, Opera */
+	filter: brightness(40%);
+	-ms-transform: skewX(-25deg); /* IE 9 */
+	-webkit-transform: skewX(-25deg); /* Safari */
+	transform: skewX(-25deg); /* Standard syntax */
+	transition: .2s all ease-in-out;
+	overflow:hidden;
+
 }
 
-#hiro {
+.char div {
+	height:100%;
+	width:132%;
+	margin-left:-15%;
+	-ms-transform: skewX(25deg); /* IE 9 */
+	-webkit-transform: skewX(25deg); /* Safari */
+	transform: skewX(25deg); /* Standard syntax */
+	background-size:cover;
+	background-position:center;
+}
+
+#hiro div {
 	background-image:url("../images/hiro-thumb.jpg");
 }
 
-#baymax {
+#baymax div {
 	background-image:url("../images/baymax-thumb.jpg");
 }
 
-#gogo {
+#gogo div {
 	background-image:url("../images/gogo-thumb.jpg");
 }
 
-#honey {
+#honey div {
 	background-image:url("../images/honey-thumb.jpg");
 }
 
-#wasabi {
+#wasabi div {
 	background-image:url("../images/wasabi-thumb.jpg");
 }
 
-#fred {
+#fred div {
 	background-image:url("../images/fred-thumb.jpg");
 }
 
 
 @-webkit-keyframes glow {
-    from {-webkit-filter: brightness(100%);}
-    to {-webkit-filter: brightness(130%);}
+	from {-webkit-filter: brightness(100%);}
+	to {-webkit-filter: brightness(130%);}
 } 
 
 .char-active {
@@ -292,43 +343,67 @@ svg {
 
 @media screen and (min-width: 768px) {
 
+	.shove-left {
+	transform: translateX(-20px);
+}
+
 	.story-box{
-		width:40%;
-		margin: auto 0;
+		width:50%;
+		margin: 8em 0em 0em 4em;
+
 	}
 
 	.char{
 		width:16.666666%;
 		height:100%;
 		flex-shrink:0;
-		background-size:cover;
+
 	}
+
 	.char-info-container{
 		width:50%;
 		margin:0 auto;
 	}
 
-	#hiro {
+	#hiro div {
 		background-image:url("../images/hiro-desk-thumb.jpg");
 	}
 
-	#baymax {
+	#baymax div {
 		background-image:url("../images/baymax-desk-thumb.jpg");
 	}
 
-	#gogo {
+	#gogo div {
 		background-image:url("../images/gogo-desk-thumb.jpg");
 	}
 
-	#honey {
+	#honey div {
 		background-image:url("../images/honey-desk-thumb.jpg");
 	}
 
-	#wasabi {
+	#wasabi div {
 		background-image:url("../images/wasabi-desk-thumb.jpg");
 	}
 
-	#fred {
+	#fred div {
 		background-image:url("../images/fred-desk-thumb.jpg");
 	}
 }
+
+@media screen and (min-width: 992px) {
+
+	.shove-left {
+	transform: translateX(-50px);
+}
+
+	.story-box{
+		width:30%;
+		margin: 8em 0em 0em 4em;
+
+	}
+
+	.char-info-container{
+		width:30%;
+		margin:0 auto;
+	}
+	}
