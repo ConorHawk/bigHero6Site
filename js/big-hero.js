@@ -36,7 +36,7 @@ $( document ).ready(function(){
 	}
 
 	//creates a function that sets the active class on the active char thumbnail div
-	function setActiveCharacter (){
+	function setActiveCharacter() {
 
 		//if there is char-active class on a sibling of the character portraits
 		if ($(selectedActive).siblings(".char-active").length) {
@@ -59,7 +59,7 @@ $( document ).ready(function(){
 
 	//changes the background image to match the clicked character.
 			//relies on correct file naming
-			$(".char-info-flex").css("background-image","url(images/"+clickedId+bgSize);
+			$(".char-info-flex").css("background-image","url(images/"+clickedId+bgSize+")");
 
 		}
 
