@@ -30,6 +30,7 @@
 	background: linear-gradient(to bottom, rgba(105,9,0,1) 0%,rgba(161,27,6,1) 37%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
+
 .info-container-flex{
 	height:35%;
 	display:flex;
@@ -58,9 +59,6 @@
 }
 
 .baymax-container-flex {
-	display:flex;
-	align-items:flex-end;
-	justify-content:space-around;
 	height:65%;
 }
 
@@ -68,9 +66,11 @@
 	height:100%;
 }
 
-img{
-	max-width:100%;
-
+svg {
+	height:100%;
+	display:block;
+	margin:0 auto;
+	padding: 0em 1em;
 }
 
 @-webkit-keyframes blink {
@@ -88,12 +88,12 @@ img{
 @-webkit-keyframes rot {
 	0% {
 		transform: rotate(0deg)
-		translate(-10px)
+		translate(10px)
 		rotate(0deg);
 	}
 	15%, 100% {
 		transform: rotate(360deg)
-		translate(-10px) 
+		translate(10px) 
 		rotate(-360deg);
 	}
 }
@@ -109,72 +109,60 @@ img{
 
 }
 
-#armmove {
-	-webkit-animation: rot 4s infinite linear;
+.armMoveAnimation {
+	-webkit-animation: rot 6s infinite ease-in-out;
+
 }
+
+/*svg {
+-webkit-filter: drop-shadow(8px 8px 10px black);  Chrome, Safari, Opera 
+    filter: drop-shadow(8px 8px 10px black);
+}
+*/
 
 
 
 /********************   Story Screen   ******************/
 
 #sectionTwo {
-	background-image: url("../images/sanfran-mob.jpg");
-	background-size:cover;
+
 /*	-webkit-box-shadow: inset 0px 0px 0px 5px rgba(156,25,8,1);
 	-moz-box-shadow: inset 0px 0px 0px 5px rgba(156,25,8,1);
 	box-shadow: inset 0px 0px 0px 5px rgba(156,25,8,1);*/
 }
 
+video{ 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    object-fit: cover;
+
+}
+
 
 .story-box {
-
-
-
+	width:100%;
+	height:100%;
+	margin:0 auto;
+	position:fixed;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	background: rgb(161,27,6); 
+	background: -moz-radial-gradient(center, ellipse cover, rgba(161,27,6,1) 0%, rgba(96,8,0,1) 100%); 
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(161,27,6,1) 0%,rgba(96,8,0,1) 100%); 
+	background: radial-gradient(ellipse at center, rgba(161,27,6,1) 0%,rgba(96,8,0,1) 100%); 
+	-webkit-filter: brightness(20%); /* Chrome, Safari, Opera */
+	filter: brightness(20%);
 }
 
-.gif-background {
-	display:block;
-	height:auto;
-}
-
-.story-box-text {
-	margin:2em;
-	padding-bottom:2em;
-	-webkit-box-shadow: 0px 0px 41px -6px rgba(0,0,0,0.73);
-	-moz-box-shadow: 0px 0px 41px -6px rgba(0,0,0,0.73);
-	box-shadow: 0px 0px 41px -6px rgba(0,0,0,0.73);
-	background:white;
-	border: 1px solid black;
-
-
-}
-
-.story-box-text h2{
+.story-paragraph {
 	text-align:center;
 	color:white;
-	font-family: 'Play', sans-serif;
-	font-weight:bold;
-	margin:0;
-	padding:.3em;
-	background: linear-gradient(to bottom, rgba(55,59,63,1) 0%,rgba(27,29,30,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	font-size:30px;
 }
 
-.story-box-text p{
-	text-align:justify;
-	margin:0;
-	padding:.8em;
-}
-
-.story-box-text p a {
-	background: rgb(105,9,0); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(105,9,0,1) 0%, rgba(161,27,6,1) 99%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, rgba(105,9,0,1) 0%,rgba(161,27,6,1) 99%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, rgba(105,9,0,1) 0%,rgba(161,27,6,1) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	border: 1px solid black;
-	margin:1em 0em;
-	float:right;
-
-}
 
 /********************   Character screen   ******************/
 
@@ -186,49 +174,62 @@ img{
 	border-bottom: 2px solid black;
 }
 
-.char-select-flex div{
-		-webkit-filter: brightness(40%); /* Chrome, Safari, Opera */
-	    filter: brightness(40%);
-/*	    -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-	    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);*/
-	    transition: .2s all ease-in-out;
-}
 
 .char{
 	width:33.333%;
 	height:50%;
 	flex-shrink:0;
 	background-size:cover;
+	background-position:center;
+	-webkit-filter: brightness(40%); /* Chrome, Safari, Opera */
+	filter: brightness(40%);
+	-ms-transform: skewX(-25deg); /* IE 9 */
+	-webkit-transform: skewX(-25deg); /* Safari */
+	transform: skewX(-25deg); /* Standard syntax */
+	transition: .2s all ease-in-out;
+	overflow:hidden;
+
 }
 
-#hiro {
+.char div {
+	height:100%;
+	width:132%;
+	margin-left:-15%;
+	-ms-transform: skewX(25deg); /* IE 9 */
+	-webkit-transform: skewX(25deg); /* Safari */
+	transform: skewX(25deg); /* Standard syntax */
+	background-size:cover;
+	background-position:center;
+}
+
+#hiro div {
 	background-image:url("../images/hiro-thumb.jpg");
 }
 
-#baymax {
+#baymax div {
 	background-image:url("../images/baymax-thumb.jpg");
 }
 
-#gogo {
+#gogo div {
 	background-image:url("../images/gogo-thumb.jpg");
 }
 
-#honey {
+#honey div {
 	background-image:url("../images/honey-thumb.jpg");
 }
 
-#wasabi {
+#wasabi div {
 	background-image:url("../images/wasabi-thumb.jpg");
 }
 
-#fred {
+#fred div {
 	background-image:url("../images/fred-thumb.jpg");
 }
 
 
 @-webkit-keyframes glow {
-    from {-webkit-filter: brightness(100%);}
-    to {-webkit-filter: brightness(130%);}
+	from {-webkit-filter: brightness(100%);}
+	to {-webkit-filter: brightness(130%);}
 } 
 
 .char-active {
@@ -242,6 +243,7 @@ img{
 	align-items:flex-end;
 	background-image:url(../images/hiro-mob-bg.jpg);
 	background-size:cover;
+	background-position:center;
 	transition: background-image 0.3s;
 }
 
@@ -266,7 +268,7 @@ img{
 
 .char-info-container p{
 
-	color:#951704;
+	color:rgba(27,29,30,1);
 	padding:1em;
 	border: 1px solid black;
 	
@@ -285,19 +287,57 @@ img{
 
 @media screen and (min-width: 768px) {
 
-	.story-box{
-		width:40%;
-		margin: auto 0;
-	}
+	.shove-left {
+	transform: translateX(-20px);
+}
+
 
 	.char{
 		width:16.666666%;
 		height:100%;
 		flex-shrink:0;
-		background-size:cover;
+
 	}
+
 	.char-info-container{
 		width:50%;
 		margin:0 auto;
 	}
+
+	#hiro div {
+		background-image:url("../images/hiro-desk-thumb.jpg");
+	}
+
+	#baymax div {
+		background-image:url("../images/baymax-desk-thumb.jpg");
+	}
+
+	#gogo div {
+		background-image:url("../images/gogo-desk-thumb.jpg");
+	}
+
+	#honey div {
+		background-image:url("../images/honey-desk-thumb.jpg");
+	}
+
+	#wasabi div {
+		background-image:url("../images/wasabi-desk-thumb.jpg");
+	}
+
+	#fred div {
+		background-image:url("../images/fred-desk-thumb.jpg");
+	}
 }
+
+@media screen and (min-width: 992px) {
+
+	.shove-left {
+	transform: translateX(-50px);
+}
+
+
+	.char-info-container{
+		width:30%;
+		margin:0 auto;
+	}
+	}

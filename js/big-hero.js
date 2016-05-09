@@ -3,37 +3,70 @@ $( document ).ready(function(){
 	//sets the default character info to be shown
 	$(".info-active").slideToggle();
 
-	//when you click a character portrait
-	$(".char").click(function(){
+	//sets the clickedId to Hiro so that if the user resizes the char select
+	//before a character is clicked, there is the default stored in the clickedID
+	//variable
+	clickedId = "hiro";
 
-		//stores the id of the selected character into a variable
-		var clickedId= $(this).attr("id");
+	//When the window is resize, run the checkSize function.
+	$( window ).resize(function(){
+		checkSize();
+		changeBackgroundImage();
+	});
 
+	//creates a variable that will control the resolution of the background images
+	var bgSize = "desk-bg";
 
+	//creates a function checkSize that checks the size of the screen and 
+	//adjusts the bgSize to fit.
+	function checkSize(){
+
+		//If the window size is greated than 767 px
+		if ($(window).width() > 767) {
+
+			//changes the bgSize variable to desk-bg
+			bgSize = "-desk-bg.jpg";
+
+		//if the screen size is smaller than 767 px
+	} else {
+
+			//changes the bgSize to mob-bg
+			bgSize = "-mob-bg.jpg";
+		}	
+	}
+
+	//creates a function that sets the active class on the active char thumbnail div
+	function setActiveCharacter() {
 
 		//if there is char-active class on a sibling of the character portraits
-		if ($(this).siblings(".char-active").length) {
+		if ($(selectedActive).siblings(".char-active").length) {
 
 			//removes the active class from all character portraits
-			$(this).siblings(".char-active").removeClass("char-active");
+			$(selectedActive).siblings(".char-active").removeClass("char-active");
 
 			//adds the active class to the character portait that has been clicked
-			$(this).addClass("char-active");
+			$(selectedActive).addClass("char-active");
+
 		} else {
 
 			//add the active class to the clicked character portrait. There is
 			//no need to remove the class as there is none.
-			$(this).addClass("char-active");
+			$(selectedActive).addClass("char-active");
+		}
+	}
+
+	function changeBackgroundImage(){
+
+	//changes the background image to match the clicked character.
+			//relies on correct file naming
+			$(".char-info-flex").css("background-image","url(images/"+clickedId+bgSize+")");
+
 		}
 
-
+		function changeDisplayedInfo(){
 
 		//if there is an active class on the character information div
 		if ($(".char-info").siblings(".info-active").length) {
-
-			//changes the background image to match the clicked character.
-			//relies on correct file naming
-			$(".char-info-flex").css("background-image","url(images/"+clickedId+"-mob-bg.jpg");
 
 			//slides the current active div away
 			$(".info-active").slideToggle("fast",function(){
@@ -51,5 +84,59 @@ $( document ).ready(function(){
 
 			});
 		} 
+	}
+
+	//runs the check size function when the page loads
+	checkSize();
+
+	//sets the first hero bg (hiro) to be the correct resolution
+	$(".char-info-flex").css("background-image","url(images/hiro"+bgSize);
+
+	//when you click a character portrait
+	$(".char").on("click touchstart",function(){
+
+		//stores the clicked div in a global variable so that the other
+		//functions can use it
+		selectedActive = this;
+
+		//stores the id of the selected character into a variable
+		clickedId = $(this).attr("id");
+
+		//changes the active thumbnail when the character thumbnails are clicked
+		setActiveCharacter();
+
+		//Changes the info when the character thumbnails are clicked
+		changeDisplayedInfo();
+
+		changeBackgroundImage();
+
 	});
+
+	$(".minimize").click(function(){
+		$( ".story-paragraph" ).fadeToggle(200);
+		$( ".arrow-down" ).fadeToggle(200);
+		$( ".story-box-text-title" ).toggleClass("story-box-text-title-background shove-left");
+		$( ".story-box" ).toggleClass("shove-left");
+
+	});
+
+	function pageTwoPlay(){
+
+		$( window ).scroll(function(){
+			
+				alert("hi");
+		});
+	}
+
+	pageTwoPlay();
+
+
 });
+
+
+
+
+
+
+
+
