@@ -142,83 +142,27 @@ video{
 
 
 .story-box {
-
+	width:100%;
+	height:100%;
+	margin:0 auto;
 	position:fixed;
-	transition: all 0.5s ease;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	background: rgb(161,27,6); 
+	background: -moz-radial-gradient(center, ellipse cover, rgba(161,27,6,1) 0%, rgba(96,8,0,1) 100%); 
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(161,27,6,1) 0%,rgba(96,8,0,1) 100%); 
+	background: radial-gradient(ellipse at center, rgba(161,27,6,1) 0%,rgba(96,8,0,1) 100%); 
+	-webkit-filter: brightness(20%); /* Chrome, Safari, Opera */
+	filter: brightness(20%);
 }
 
-.gif-background {
-	display:block;
-	height:auto;
-}
-
-.story-box-text {
-	margin:2em 2em 0em 2em;
-
-
-
-
-
-}
-
-.arrow-down {
-	width: 0; 
-	height: 0; 
-	border-left: 0px solid transparent;
-	border-right: 30px solid transparent;
-	border-top: 30px solid #fff;
-	margin-left:15%;
-}
-
-.story-box-text-title{
-	border-radius: 21px 21px 0px 0px;
+.story-paragraph {
 	text-align:center;
 	color:white;
-	font-family: 'Play', sans-serif;
-	font-weight:bold;
-	margin:0;
-	padding:.3em;
-	transition: all 0.2s ease;
-	
+	font-size:30px;
 }
 
-.story-box-text-title-background {
-	background: linear-gradient(to bottom, rgba(55,59,63,1) 0%,rgba(27,29,30,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-}
-
-.shove-left {
-	transform: translateX(-10px);
-}
-
-.minimize {
-	float:right;
-	margin-right:1em;
-	color:white;
-}
-
-.minimize:before{
-	color:white;
-}
-
-.story-box-text p{
-	margin:0;
-	padding:1em;
-		background:white;
-			border-radius: 0px 0px 30px 30px;
-
-}
-
-.story-box-text p a {
-	background: rgb(105,9,0); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(105,9,0,1) 0%, rgba(161,27,6,1) 99%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, rgba(105,9,0,1) 0%,rgba(161,27,6,1) 99%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, rgba(105,9,0,1) 0%,rgba(161,27,6,1) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	border: 1px solid black;
-	margin:1em 0em;
-	float:right;
-	border-radius:0;
-
-}
 
 /********************   Character screen   ******************/
 
@@ -347,11 +291,6 @@ video{
 	transform: translateX(-20px);
 }
 
-	.story-box{
-		width:50%;
-		margin: 8em 0em 0em 4em;
-
-	}
 
 	.char{
 		width:16.666666%;
@@ -396,11 +335,6 @@ video{
 	transform: translateX(-50px);
 }
 
-	.story-box{
-		width:30%;
-		margin: 8em 0em 0em 4em;
-
-	}
 
 	.char-info-container{
 		width:30%;

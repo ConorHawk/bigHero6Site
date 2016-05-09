@@ -28,7 +28,7 @@ $( document ).ready(function(){
 			bgSize = "-desk-bg.jpg";
 
 		//if the screen size is smaller than 767 px
-		} else {
+	} else {
 
 			//changes the bgSize to mob-bg
 			bgSize = "-mob-bg.jpg";
@@ -47,7 +47,7 @@ $( document ).ready(function(){
 			//adds the active class to the character portait that has been clicked
 			$(selectedActive).addClass("char-active");
 
-			} else {
+		} else {
 
 			//add the active class to the clicked character portrait. There is
 			//no need to remove the class as there is none.
@@ -56,13 +56,14 @@ $( document ).ready(function(){
 	}
 
 	function changeBackgroundImage(){
+
 	//changes the background image to match the clicked character.
 			//relies on correct file naming
 			$(".char-info-flex").css("background-image","url(images/"+clickedId+bgSize);
 
-	}
+		}
 
-	function changeDisplayedInfo(){
+		function changeDisplayedInfo(){
 
 		//if there is an active class on the character information div
 		if ($(".char-info").siblings(".info-active").length) {
@@ -92,7 +93,7 @@ $( document ).ready(function(){
 	$(".char-info-flex").css("background-image","url(images/hiro"+bgSize);
 
 	//when you click a character portrait
-	$(".char").click(function(){
+	$(".char").on("click touchstart",function(){
 
 		//stores the clicked div in a global variable so that the other
 		//functions can use it
@@ -116,6 +117,26 @@ $( document ).ready(function(){
 		$( ".arrow-down" ).fadeToggle(200);
 		$( ".story-box-text-title" ).toggleClass("story-box-text-title-background shove-left");
 		$( ".story-box" ).toggleClass("shove-left");
-	
+
 	});
+
+	function pageTwoPlay(){
+
+		$( window ).scroll(function(){
+			
+				alert("hi");
+		});
+	}
+
+	pageTwoPlay();
+
+
 });
+
+
+
+
+
+
+
+

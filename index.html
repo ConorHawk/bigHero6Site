@@ -17,8 +17,16 @@
 	<!--  v   One page scroll script  v   -->
 	<script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>
 
+	<script type="text/javascript" src="js/jquery.lettering.js"></script>
+
+	<script type="text/javascript" src="js/jquery.textillate.js"></script>
+	
+	<script type="text/javascript" src="js/jquery.xeyes-2.0.min.js"></script>
+
 	<!--  v   One page scroll style sheet  v   -->
 	<link href='css/onepage-scroll.css' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/animate.css">
 
 	<!--  v   Google Fonts  v   -->
 	<link href='https://fonts.googleapis.com/css?family=Passion+One:400,700,900|Anton|Play:400,700|Audiowide' rel='stylesheet' type='text/css'>
@@ -223,21 +231,9 @@
 
 		<div class="story-box">
 
-
-			<div class="story-box-text">
-				<div class="story-box-text-title story-box-text-title-background">
-
-				<h2>Story <a class="minimize" href="#"><i class="fa fa-minus" aria-hidden="true"></i></a></h2>
-
-				</div>
-
-				<p class="story-paragraph">When a criminal plot threatens the hi-tech metropolis of San Fransokyo, brilliant young robotics whiz Hiro Hamada (voice of Ryan Potter) leaps into action with his tech-savvy friends, and his robot companion Baymax (voice of Scott Adsit) in Disney Animation's adaptation of the popular Marvel Comics series. <a href="#" class="btn btn-info" role="button">Read more!</a></p>
-
-			</div>
-			<div class="arrow-down"></div>
+				<p class="story-paragraph">When San Fransokyo is in danger,<br>you need...</p>
 
 		</div>
-
 
 		<video autoplay loop poster="polina.jpg" id="bgvid">
 			<source src="clips/first-look.mp4" type="video/mp4">
@@ -307,7 +303,7 @@
     	   updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
     	   beforeMove: function(index) {},  // This option accepts a callback function. The function will be called before the page moves.
     	   afterMove: function(index) {},   // This option accepts a callback function. The function will be called after the page moves.
-    	   loop: true,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
+    	   loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
     	   keyboard: true,                  // You can activate the keyboard controls
     	   responsiveFallback: false,        // You can fallback to normal page scroll by defining the width of the browser in which
     	                                    // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
