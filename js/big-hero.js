@@ -90,10 +90,10 @@ $( document ).ready(function(){
 	checkSize();
 
 	//sets the first hero bg (hiro) to be the correct resolution
-	$(".char-info-flex").css("background-image","url(images/hiro"+bgSize);
+	$(".char-info-flex").css("background-image","url(images/hiro"+bgSize+")");
 
 	//when you click a character portrait
-	$(".char").on("click touchstart",function(){
+	$(".char").on("click",function(){
 
 		//stores the clicked div in a global variable so that the other
 		//functions can use it
@@ -101,6 +101,7 @@ $( document ).ready(function(){
 
 		//stores the id of the selected character into a variable
 		clickedId = $(this).attr("id");
+
 
 		//changes the active thumbnail when the character thumbnails are clicked
 		setActiveCharacter();
@@ -112,23 +113,24 @@ $( document ).ready(function(){
 
 	});
 
-	$(".minimize").click(function(){
-		$( ".story-paragraph" ).fadeToggle(200);
-		$( ".arrow-down" ).fadeToggle(200);
-		$( ".story-box-text-title" ).toggleClass("story-box-text-title-background shove-left");
-		$( ".story-box" ).toggleClass("shove-left");
-
+	$(".main").onepage_scroll({
+		afterMove: function(index) {
+			if ($('#sectionTwo').hasClass('active')) {
+				$("#bgvid").get(0).play(); 
+			} else {
+				$("#bgvid").get(0).pause(); 
+			}
+		}
 	});
 
-	function pageTwoPlay(){
+	$('.iris').xeyes();
 
-		$( window ).scroll(function(){
-			
-				alert("hi");
-		});
-	}
+	$( "body" ).mousemove(function( event ) {
 
-	pageTwoPlay();
+		$(".eyeball").css("transform","translate("+event.pageX/2+"px,"+event.pageX/2+"px)");
+		// $(".eyeball").css("transform",("translateY("+(event.pageY/2+"px)")));
+		console.log(event.pageX)
+	});
 
 
 });
