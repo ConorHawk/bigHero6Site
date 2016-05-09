@@ -59,7 +59,7 @@ $( document ).ready(function(){
 
 	//changes the background image to match the clicked character.
 			//relies on correct file naming
-			$(".char-info-flex").css("background-image","url(images/"+clickedId+bgSize);
+			$(".char-info-flex").css("background-image","url(images/"+clickedId+bgSize+")");
 
 		}
 
