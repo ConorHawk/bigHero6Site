@@ -30,10 +30,10 @@
 	background: linear-gradient(to bottom, rgba(105,9,0,1) 0%,rgba(161,27,6,1) 37%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
-/*.eyeball {
-	transform: translateY(50px);
+.eyeball {
+	position:fixed;
 }
-*/
+
 
 
 
@@ -42,23 +42,32 @@
 	display:flex;
 }
 .disney{
-	width:45%;
+	width:50%;
 	height:100%;
 }
 .speech-bubble {
-	width:65%;
+	display:flex;
+	width:50%;
 	height:100%;
+}
+
+.speech-bubble a {
+	height:80%;
+	width:80%;
 }
 
 #bubble-pic {
 	cursor:pointer;
+	padding:3em 3em 0em 0em;
 }
 
-#bubble-pic:active {
+.speech-bubble svg:hover {
 	transform: translateY(2px);
 }
 
-.speech-bubble img{
+.speech-bubble svg{
+	display:block;
+	height:100%;
 	padding:3em 1em 2em 1em;
 	-webkit-animation: bubbleFloat 1s infinite;
 	-webkit-animation-direction: alternate;
@@ -72,7 +81,7 @@
 	height:100%;
 }
 
-svg {
+.baymax-scale svg {
 	height:100%;
 	display:block;
 	margin:0 auto;
@@ -106,7 +115,7 @@ svg {
 
 @-webkit-keyframes bubbleFloat {
 	0%   { transform:translateY(0px); }
-	100% { transform:translateY(8px); }
+	100% { transform:translateY(6px); }
 }
 
 #eyes {
@@ -135,13 +144,18 @@ svg {
 	background:black;
 }
 
-video{ 
-    position: fixed;
+.video-container {
+	display:flex;
+	    position: fixed;
     width: 100%;
     height: 100%;
     z-index: 9999;
-    object-fit: cover;
+}
 
+video{ 
+	margin:auto;
+    object-fit: cover;
+    width:100%;
 }
 
 /********************   Character screen   ******************/
@@ -230,7 +244,7 @@ video{
 
 .char-info-container{
 	padding:.3em 2em;
-
+	margin:0 auto;
 }
 
 .char-info-container h3{
@@ -246,12 +260,13 @@ video{
 	
 }
 
-.char-info-container p{
+
+.char-info-container li{
 
 	color:rgba(27,29,30,1);
-	padding:1em;
-	border: 1px solid black;
-	
+	padding:.5em 1em;
+	list-style:none;
+	font-size: 18px;
 }
 
 .char-info-container div {
@@ -279,9 +294,14 @@ video{
 
 	}
 
+	.char-info-flex {
+		align-items:center;
+		justify-content:flex-start;
+	}
+
 	.char-info-container{
 		width:50%;
-		margin:0 auto;
+		margin:0 0;
 	}
 
 	#hiro div {
@@ -318,6 +338,6 @@ video{
 
 	.char-info-container{
 		width:30%;
-		margin:0 auto;
+		margin:0 5em;
 	}
 	}

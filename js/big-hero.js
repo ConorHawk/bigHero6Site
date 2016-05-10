@@ -28,7 +28,7 @@ $( document ).ready(function(){
 			bgSize = "-desk-bg.jpg";
 
 		//if the screen size is smaller than 767 px
-	} else {
+		} else {
 
 			//changes the bgSize to mob-bg
 			bgSize = "-mob-bg.jpg";
@@ -123,15 +123,40 @@ $( document ).ready(function(){
 		}
 	});
 
-	$('.iris').xeyes();
+	// $('.iris').xeyes();
 
-	$( "body" ).mousemove(function( event ) {
+	// $( "body" ).mousemove(function( event ) {
 
-		$(".eyeball").css("transform","translate("+event.pageX/2+"px,"+event.pageX/2+"px)");
-		// $(".eyeball").css("transform",("translateY("+(event.pageY/2+"px)")));
-		console.log(event.pageX)
-	});
+	// 	$(".eyeball").css("transform","translate("+event.pageX/2+"px,"+event.pageX/2+"px)");
+	// 	// $(".eyeball").css("transform",("translateY("+(event.pageY/2+"px)")));
+	// 	console.log(event.pageX)
+	// });
 
+// function makeNewPosition(){
+    
+//     // Get viewport dimensions (remove the dimension of the div)
+//     var h = $(window).height() - 50;
+//     var w = $(window).width() - 50;
+    
+//     var nh = Math.floor(Math.random() * h);
+//     var nw = Math.floor(Math.random() * w);
+
+//     console.log(nh);
+    
+//     return [nh,nw];    
+    
+// }
+
+// function animateDiv(){
+//     var newq = makeNewPosition();
+//     $(".eyeball").css({ "transform","translate("+newq[0]+","+left: newq[1]+")" }, function(){
+//       animateDiv();   
+//       console.log("hi");     
+//     });
+    
+
+// }
+//      animateDiv();
 
 });
 
