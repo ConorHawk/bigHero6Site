@@ -194,6 +194,7 @@ video{
 	transform: skewX(-25deg); /* Standard syntax */
 	transition: .2s all ease-in-out;
 	overflow:hidden;
+	border:.5px solid black;
 
 }
 

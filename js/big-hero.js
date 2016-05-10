@@ -69,7 +69,7 @@ $( document ).ready(function(){
 		if ($(".char-info").siblings(".info-active").length) {
 
 			//slides the current active div away
-			$(".info-active").slideToggle("fast",function(){
+			$(".info-active").fadeToggle("fast",function(){
 
 				//When the previous slide completes, remove all active classes from the info divs
 				$(".char-info").siblings(".info-active").removeClass("info-active");
